@@ -70,9 +70,7 @@ ORDER BY total_sales DESC;
         orders AS o
     JOIN order_items AS oi ON o.order_id = oi.order_id
     GROUP BY staff_id) 
-    
-SELECT 
-SELECT 
+        
 SELECT 
     tab.staff_id,
     CONCAT(s.first_name, s.last_name) AS staff_name,
@@ -88,6 +86,7 @@ SELECT p.product_name FROM stocks s JOIN products p ON
  SUM(s.quantity)=0;
  
  -- Get the top 5 brands that generated the highest revenue.
+
 SELECT 
     b.brand_name, t.revenue_per_brand
 FROM
@@ -128,13 +127,3 @@ GROUP BY month
 ORDER BY month;
 
  
-
-
-
-
-
-
-
-
-
-
