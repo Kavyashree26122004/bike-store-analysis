@@ -10,6 +10,7 @@ FROM
 LIMIT 10;
 
 -- List all products that have a list price greater than 500.
+
 select *from products;
 
 SELECT 
