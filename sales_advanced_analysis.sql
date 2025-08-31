@@ -26,7 +26,8 @@ FROM
         JOIN
     stores AS s ON t.store_id = s.store_id;
     
-    -- Find the best-performing sales staff in each store using total revenue.
+-- Find the best-performing sales staff in each store using total revenue.
+
     with tab as 
     (select t2.store_id,staff_name, total_revenue , rank() over( partition by t2.store_id order by total_revenue desc) as ranks 
     from
@@ -83,6 +84,7 @@ SELECT distinct DATE_FORMAT(order_date,'%Y-%m') AS month, SUM(oi.quantity *
  
 -- Generate a customer lifetime value (CLV) report showing total orders, total quantity,total spend
 -- and average order value using views
+
 create view CustomerLifetimeValue as 
 SELECT 
     o.customer_id,
